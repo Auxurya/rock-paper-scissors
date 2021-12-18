@@ -18,21 +18,27 @@
                 switch(upperPlayer) {
                     case 'Rock':
                             if(computerSelection == 'Paper' || computerSelection == 'Scissors') {
-                                computerSelection == 'Paper' ? alert(`You lose! ${computerSelection} [${++computerScore}] covers ${upperPlayer} [${playerScore}]`) : alert(`You win! ${upperPlayer} [${++playerScore}] breaks ${computerSelection} [${computerScore}]`);
+                                computerSelection == 'Paper' ?
+                                         alert(`You lose! ${computerSelection} [${++computerScore}] covers ${upperPlayer} [${playerScore}]`) :
+                                                 alert(`You win! ${upperPlayer} [${++playerScore}] breaks ${computerSelection} [${computerScore}]`);
                             } else {
                                 alert(`It's a draw! ${upperPlayer} [${playerScore}] matches ${computerSelection} [${computerScore}].`);
                             };
                             break;
                     case 'Paper':
                             if(computerSelection == 'Rock' || computerSelection == 'Scissors') {
-                                computerSelection == 'Rock' ? alert(`You win! ${upperPlayer} [${++playerScore}] covers ${computerSelection} [${computerScore}]`) : alert(`You lose! ${computerSelection} [${++computerScore}] cut ${upperPlayer} [${playerScore}]`);
+                                computerSelection == 'Rock' ?
+                                         alert(`You win! ${upperPlayer} [${++playerScore}] covers ${computerSelection} [${computerScore}]`) :
+                                                 alert(`You lose! ${computerSelection} [${++computerScore}] cut ${upperPlayer} [${playerScore}]`);
                             } else {
                                 alert(`It's a draw! ${upperPlayer} [${playerScore}] matches ${computerSelection} [${computerScore}].`);
                             };
                             break;
                     case 'Scissors':
                             if(computerSelection == 'Paper' || computerSelection == 'Rock') {
-                                computerSelection == 'Paper' ? alert(`You win! ${upperPlayer} [${++playerScore}] cut ${computerSelection} [${computerScore}]`) : alert(`You lose! ${computerSelection} [${++computerScore}] breaks ${upperPlayer} [${playerScore}]`);
+                                computerSelection == 'Paper' ?
+                                         alert(`You win! ${upperPlayer} [${++playerScore}] cut ${computerSelection} [${computerScore}]`) :
+                                                 alert(`You lose! ${computerSelection} [${++computerScore}] breaks ${upperPlayer} [${playerScore}]`);
                             } else {
                                 alert(`It's a draw! ${upperPlayer} [${playerScore}] matches ${computerSelection} [${computerScore}].`);
                             };
@@ -41,7 +47,8 @@
                         alert('Incorrect input')
                 };
             };
-            let game = rounds => {
+            let game = () => {
+                let rounds = prompt('How many rounds of \'Rock, Paper, Scissors\' would you like to play?: ')
                 computerScore = 0, playerScore = 0;
                 for(i = 0; i < rounds; i++) {
                     playRound();
