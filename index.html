@@ -10,6 +10,35 @@
         <script>
             console.log('Rochambeau!');
             let computerPlay = () => ['Rock', 'Paper', 'Scissors'][Math.floor(Math.random() * 3)];
+            let playRound = () => {
+                let playerSelection = prompt('Rock, Paper or Scissors?: ');
+                let computerSelection = computerPlay();
+                let upperPlayer = playerSelection.charAt(0).toUpperCase() + playerSelection.substring(1).toLowerCase();
+                //alert(upperPlayer + ' vs. ' + computerSelection);
+                switch(upperPlayer) {
+                    case 'Rock':
+                            if(computerSelection == 'Paper' || computerSelection == 'Scissors') {
+                                computerSelection == 'Paper' ? alert(`You lose! ${computerSelection} covers ${upperPlayer}`) : alert(`You win! ${upperPlayer} breaks ${computerSelection}`);
+                            } else {
+                                alert(`It's a draw! ${upperPlayer} matches ${computerSelection}.`);
+                            };
+                            break;
+                    case 'Paper':
+                            if(computerSelection == 'Rock' || computerSelection == 'Scissors') {
+                                computerSelection == 'Rock' ? alert(`You win! ${upperPlayer} covers ${computerSelection}`) : alert(`You lose! ${computerSelection} cut ${upperPlayer}`);
+                            } else {
+                                alert(`It's a draw! ${upperPlayer} matches ${computerSelection}.`);
+                            };
+                            break;
+                    case 'Scissors':
+                            if(computerSelection == 'Paper' || computerSelection == 'Rock') {
+                                computerSelection == 'Paper' ? alert(`You win! ${upperPlayer} cut ${computerSelection}`) : alert(`You lose! ${computerSelection} breaks ${upperPlayer}`);
+                            } else {
+                                alert(`It's a draw! ${upperPlayer} matches ${computerSelection}.`);
+                            };
+                            break;
+                }
+            };
         </script>
     </body>
 </html>
