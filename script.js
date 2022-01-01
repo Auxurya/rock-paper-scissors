@@ -1,22 +1,14 @@
+let playerSelection;
+window.addEventListener('click', event => {
+    playerSelection = event.target.innerText;
+    playRound();
+});
 
-console.log('Rochambeau!');
-const capitalize = string => {
-    string = string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();
-    return string;
-}
 let choices = ['Rock', 'Paper', 'Scissors'];
 let computerPlay = () => choices[Math.floor(Math.random() * 3)];
 let computerScore = 0, playerScore = 0;
 let playRound = () => {
     let computerSelection = computerPlay();
-    let playerSelection;
-    let validInput = false;
-    do {
-        playerSelection = capitalize(prompt('Rock, Paper or Scissors?'));
-        (choices.indexOf(playerSelection) == -1) ?
-                 validInput = false :
-                         validInput = true;
-    } while (!validInput);
     switch(playerSelection) {
         case 'Rock':
                 if(computerSelection == 'Paper' || computerSelection == 'Scissors') {
@@ -47,6 +39,7 @@ let playRound = () => {
                 break;
     };
 };
+
 let game = () => {
     let rounds = prompt('How many rounds of \'Rock, Paper, Scissors\' would you like to play?: ')
     computerScore = 0, playerScore = 0;
