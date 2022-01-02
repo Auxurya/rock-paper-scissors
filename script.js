@@ -1,6 +1,6 @@
 let playerSelection;
 window.addEventListener('click', event => {
-    playerSelection = event.target.innerText;
+    playerSelection = event.target.alt;
     playRound();
 });
 
