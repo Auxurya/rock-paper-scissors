@@ -1,13 +1,23 @@
-button {
+.buttons button {
     padding: 0;
     border: none;
     background: none;
     display: inline;
 }
 
+button {
+    display: inline;
+}
+
 h1,
-.buttons {
+.buttons,
+p,
+#reset {
     text-align: center;
+}
+
+span {
+    color: rgb(187, 187, 187);
 }
 
 #rock,
@@ -19,13 +29,19 @@ h1,
     display: inline-block;
 }
 
-h1 {
+h1,
+p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
     font-size: 30px;
     color: grey;
+    margin: 50px;
 }
 
 img {
     width: 80%;
+}
+
+#paper-button {
+    margin: 50px;
 }
