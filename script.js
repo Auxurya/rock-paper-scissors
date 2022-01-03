@@ -7,15 +7,40 @@ results.innerHTML = `<p>PLAYER [${playerScore}] <span>${result}</span> [${comput
 let choices = ['Rock', 'Paper', 'Scissors'];
 let computerPlay = () => choices[Math.floor(Math.random() * 3)];
 let playerSelection;
+let computerSelection;
+
+
+// window.addEventListener('click', event => {
+//     if (playerScore == 5 || computerScore == 5) {
+//         playerScore == 5 ?
+//                  results.innerHTML = '<p><span>PLAYER WINS FIRST TO 5</span></p>':
+//                         results.innerHTML = '<p><span>COMPUTER WINS FIRST TO 5</span></p>';
+//     } else {
+//         playerSelection = event.target.alt;
+//         playRound();
+//     }
+// });
+
 
 window.addEventListener('click', event => {
-    playerSelection = event.target.alt;
-    playRound();
+    if (playerScore == 5 || computerScore == 5) {
+        return;
+    } else {
+        playerSelection = event.target.alt;
+        playRound();
+        if (playerScore == 5 || computerScore == 5) {
+            playerScore == 5 ?
+                     results.innerHTML = '<p><span>PLAYER WINS FIRST TO 5</span></p>':
+                            results.innerHTML = '<p><span>COMPUTER WINS FIRST TO 5</span></p>';
+        } else {
+            return;
+        };
+    };
 });
 
 
 let playRound = () => {
-    let computerSelection = computerPlay();
+    computerSelection = computerPlay();
     switch(playerSelection) {
         case 'Rock':
                 if(computerSelection == 'Paper' || computerSelection == 'Scissors') {
@@ -57,7 +82,7 @@ let playRound = () => {
 
 let resetButton = document.getElementById('reset');
 const reset = () => {
-    let computerScore = 0, playerScore = 0;
+    computerScore = 0, playerScore = 0;
     let result = 'Play Your Hand';
     let results = document.getElementById('results');
     results.innerHTML = `<p>PLAYER [${playerScore}] <span>${result}</span> [${computerScore}] COMPUTER</p>`;
